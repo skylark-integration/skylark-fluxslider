@@ -1,0 +1,9 @@
+/**
+ * skylark-fluxslider - A version of fluxslider that ported to running on skylarkjs ui.
+ * @author Hudaokeji, Inc.
+ * @version v0.9.0
+ * @link https://github.com/skylark-integration/skylark-fluxslider/
+ * @license MIT
+ */
+define(["skylark-jquery","./flux"],function(r,t){t.browser={init:function(){if(void 0===t.browser.supportsTransitions){document.createElement("div");if(window.Modernizr&&void 0!==Modernizr.csstransitions?t.browser.supportsTransitions=Modernizr.csstransitions:t.browser.supportsTransitions=this.supportsCSSProperty("Transition"),window.Modernizr&&void 0!==Modernizr.csstransforms3d)t.browser.supports3d=Modernizr.csstransforms3d;else if(t.browser.supports3d=this.supportsCSSProperty("Perspective"),t.browser.supports3d&&"webkitPerspective"in r("body").get(0).style){var o=r('<div id="csstransform3d"></div>'),s=r('<style media="(transform-3d), ('+["-webkit","-moz","-o","-ms"].join("-transform-3d),(")+'-transform-3d)">div#csstransform3d { position: absolute; left: 9px }</style>');r("body").append(o),r("head").append(s),t.browser.supports3d=9==o.get(0).offsetLeft,o.remove(),s.remove()}}},supportsCSSProperty:function(r){for(var t=document.createElement("div"),o=["Webkit","Moz","O","Ms"],s=!1,e=0;e<o.length;e++)o[e]+r in t.style&&(s=s||!0);return s},translate:function(r,o,s){return r=void 0!=r?r:0,o=void 0!=o?o:0,s=void 0!=s?s:0,"translate"+(t.browser.supports3d?"3d(":"(")+r+"px,"+o+(t.browser.supports3d?"px,"+s+"px)":"px)")},rotateX:function(r){return t.browser.rotate("x",r)},rotateY:function(r){return t.browser.rotate("y",r)},rotateZ:function(r){return t.browser.rotate("z",r)},rotate:function(r,o){return!r in{x:"",y:"",z:""}&&(r="z"),o=void 0!=o?o:0,t.browser.supports3d?"rotate3d("+("x"==r?"1":"0")+", "+("y"==r?"1":"0")+", "+("z"==r?"1":"0")+", "+o+"deg)":"z"==r?"rotate("+o+"deg)":""}},r(function(){t.browser.init()})});
+//# sourceMappingURL=sourcemaps/flux.browser.js.map

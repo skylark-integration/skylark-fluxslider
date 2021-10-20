@@ -1,0 +1,1 @@
+{"version":3,"sources":["flux.js"],"names":["define","skylark","attach","version"],"mappings":";;;;;;;AAAAA,QACC,oBACC,SAASC,GACV,OAAOA,EAAQC,OAAO,aACrBC,QAAS","file":"../flux.js","sourcesContent":["define([\r\n\t\"skylark-langx-ns\"\r\n],function(skylark) {\r\n\treturn skylark.attach(\"intg.flux\",{\r\n\t\tversion: '@VERSION'\r\n\t});\r\n});"]}
